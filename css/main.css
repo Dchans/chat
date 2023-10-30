@@ -289,7 +289,7 @@ body{
 }
 .message-options>div img{
     margin: 0.3vw;
-    transition: transform 0.9s ease;
+    transition: transform 0.4s ease;
 }
 .message-options>div img:hover{
     transform: translateY(-10px) scale(1.5);
