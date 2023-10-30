@@ -80,7 +80,7 @@ body{
 }
 .left_profile_image{
     position: relative;
-    height: 25%;
+    height: 158px;
 }
 .left_profile_image .profile_image_div{
     z-index: 1;
@@ -89,14 +89,12 @@ body{
     border-radius: 100px;
 }
 .left_profile_image .user_name_div{
-    position: absolute;
     border-radius: 10px 5px;
     width: 80%;
-    height: 20%;
-    bottom: 10px;
+    height: 37%;
     background: rgba(84, 125, 215, 0.72);
     color: white;
-    font-size: 25px;
+    font-size: 35px;
 }
 .left_reaction_container{
     height: 30%;
@@ -259,10 +257,15 @@ body{
 
 .user_message_container{
     border-radius: 1.52206rem;
-    background: linear-gradient(86deg, rgba(43, 61, 216, 0.70) 26.97%, rgba(52, 123, 229, 0.83) 73.96%);
     margin: 10px;
     padding: 15px;
     word-break: break-all;
+}
+.sender-message .user_message_container{
+    background: linear-gradient(86deg, rgba(43, 61, 216, 0.70) 26.97%, rgba(52, 123, 229, 0.83) 73.96%);
+}
+.reciever-message .user_message_container{
+    background: linear-gradient(94deg, rgba(47, 87, 189, 0.78) 7.99%, rgba(33, 95, 255, 0.94) 100%);
 }
 .user_message_container span{
     color: white;
@@ -295,14 +298,19 @@ body{
 /*------------------------------------------Responsive Queries--------------------------------------------------*/
 @media screen and (max-width:1000px),(max-height:600px) {
     .left_userinfo_box{
-        display: none;
         position: absolute;
-        left: -31vmax;
+        left:0;
         z-index: 2;
+        transform: translateX(-98%);
+        background: rgba(72, 99, 197, 1);
     }
     .userlist_msg_container{
         width: 100%;
     }
+    .left_userinfo_box:hover{
+        transform: translateX(0%);
+    }
+
 }
 @media screen and (max-height:800px) {
     .userlist_msg_container .profile_list {
