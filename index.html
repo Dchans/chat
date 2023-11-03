@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
     <link href="css/main.css" type="text/css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
 </head>
 
 <body>
@@ -70,13 +71,22 @@
                         </div>
 
                     </div>
-                    <div class="message-options">
-                        <div class="center_div display-flex flex-between">
-                            <img src="images/send.png">
-                            <img src="images/picture.png">
-                            <img src="images/video.png">
-                            <img src="images/voice.png">
+                    <div class="message-options display-flex flex-center" >
+                        <div class="msg-input"><input></div>
+                        <div class="msg-option-div">
+                            <div class="display-grid grid-center " style="--columns:4">
+                                <div class="msg_send_option"><img src="images/send.png"></div>
+                                <div class="msg_img_option"><img src="images/picture.png"></div>
+                                <div class="msg_video_option"><img src="images/video.png"></div>
+                                <div class="msg_voice_option"><img src="images/voice.png"></div>
+                            </div>
+                            <div class="msg-reaction-option-div"><div class=""><img src="images/reactions/angry.gif"></div></div>
                         </div>
+                       
+                       
+                      
+                      
+                       
                     </div>
                 </div>
 
@@ -84,5 +94,23 @@
         </div>
     </div>
 </body>
-
+<script>
+    $(".message-options  .msg-option-div .display-grid div").click((e)=>{
+        console.log($(".msg-input").css("width"))
+        if($(".msg-input").css("width")==="0px"){
+            $(".msg-option-div").css({"width":"55px","border-radius":"10px","background":"#3C3B66"})
+            $(".msg-option-div .display-grid").css({"--columns":1,})
+            $(".msg-input").css({width:"100%"})
+            $(e.target).parent()[0].scrollIntoView();
+            setTimeout(()=>{$(".msg-reaction-option-div").show();},500)
+        }
+        else{
+            $(".msg-option-div").css({"width":"200px","border-radius":"40px","background":"rgba(27, 24, 24)"})
+            $(".msg-option-div .display-grid").css({"--columns":4,})
+            $(".msg-input").css({width:"0%"})
+            setTimeout(()=>{$(".msg-reaction-option-div").hide();},200)
+        }
+       
+    })
+</script>
 </html>

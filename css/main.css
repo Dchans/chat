@@ -109,7 +109,6 @@ body{
 .left_reaction_container>div img{
     width: 100%;
     height: 100%;
-    border-radius: 20px;
     vertical-align: middle;
 }
 .left_userbio{
@@ -275,25 +274,62 @@ body{
     color: white;
 }
 .message-options{
-    width:100%;
-    height: 7%;
+    width: 70%;
+    height: 50px;
     position: absolute;
-    bottom: 0;
-    
+    bottom: 3px;
 }
-.message-options>div{
-    background: rgba(27, 24, 24);
+.message-options .msg-option-div{
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
     height: 100%;
+    background: rgba(27, 24, 24);
     border-radius: 40px;
+    position: relative;
+    width: 200px;
+    transition: width 0.5s ease;
 }
 .message-options>div img{
-    margin: 0.3vw;
-    transition: transform 0.4s ease;
+    height: 100%;
+    width: 100%;
+    padding: 3px;
+}
+.msg-input{
+  width: 0%;
+  transition: width 0.5s ease;
+}
+.msg-input input{
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    border-radius: 5px;
+    outline: none;
+    padding: 3px;
+    border: none;
 }
 .message-options>div img:hover{
-    transform: translateY(-10px) scale(1.5);
+    /* transform: translateY(-10px) scale(1.5); */
  
+}
+.msg-reaction-option-div{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #7170C5;
+    position: absolute;
+    right: -35px;
+    top: 11px;
+    display: none;
+}
+.message-options.message-options ::-webkit-scrollbar {
+    width: 0; /* Adjust scrollbar width as needed */
+}
+.msg-option-div .display-grid{
+    height: 100%;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+.msg-option-div .display-grid>div{
+    scroll-snap-align: start;
 }
 /*------------------------------------------Responsive Queries--------------------------------------------------*/
 @media screen and (max-width:1000px),(max-height:600px) {
@@ -310,7 +346,10 @@ body{
     .left_userinfo_box:hover{
         transform: translateX(0%);
     }
-
+    .msg-input input{
+        font-size: 1rem;
+    }
+  
 }
 @media screen and (max-height:800px) {
     .userlist_msg_container .profile_list {
@@ -319,6 +358,10 @@ body{
     .userlist_msg_container .profile_list .display_user_div {
         width: 79px;
         height: 90px;
+    }
+    .message-options {
+       
+        bottom: 10px;
     }
 }
 @media screen and (max-height:500px) {
